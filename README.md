@@ -63,10 +63,3 @@ The detection `threshold` is not a magic number — it should be measured, not g
 - No spectral flatness check yet — adding one would help distinguish a clap (broadband/noisy) from other sudden loud sounds (e.g. a single tonal bang), reducing false positives.
 - Config (target app, threshold, sample rate) is currently hardcoded — could move to a small config file for easier changes.
 
-## What I learned
-
-- Why pitch-tracking is the wrong tool for a transient, non-tonal sound like a clap.
-- The difference between "loud" and "sudden," and why the latter is the actual signal that defines a clap.
-- Sample rate and buffer size are tradeoffs, not arbitrary constants — they need to match the frequency content and time resolution of the sound you're detecting.
-- Separating pure decision logic from I/O (capture, action) makes a system testable and easier to reason about as it grows.
-- 
